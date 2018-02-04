@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        ImageView_BitmapView.scrollBy(scrollByX, scrollByY);
+                        gatre.scrollBy(scrollByX, scrollByY);
                         downX = curX;
                         downY = curY;
                         break;

@@ -3,7 +3,7 @@
       xmlns:LakelandNaviGATORUIModel="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/search"
         android:title="@string/search_bar"
-        android:icon="@drawable/alligator"
+        android:icon="@android:drawable/ic_btn_speak_now"
         LakelandNaviGATORUIModel:showAsAction="collapseActionView|ifRoom"
         LakelandNaviGATORUIModel:actionViewClass="android.widget.SearchView"
         />
