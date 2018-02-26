@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,21 +20,24 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bitmap gator = ((BitmapDrawable)getDrawable(R.drawable.alligator)).getBitmap();
         //replace any reference to an alligator with one to the map
+        Bitmap gator = ((BitmapDrawable)getDrawable(R.drawable.alligator)).getBitmap();
         Point size = new Point();
-        Scroll scr = new Scroll();
-        scr.scrolling();
         int screenW = size.x;
         int screenH = size.y;
         final int maxXx = ((gator.getWidth() / 2) - (screenW / 2));
         final int maxY = ((gator.getHeight() / 2) - (screenH / 2));
+        TextToSpeech tts = new TextToSpeech();
+        tts.setLanguage(Locale.US);
+        tts.speak("Text to say aloud", TextToSpeech.QUEUE_ADD, null);
         final int maxLeft = (maxXx * -1);
         final int maxTop = (maxY * -1);
         final ImageView gatre = this.findViewById(R.id.gatorView);
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        // scrolling to right side of image (pic moving to the left)
+
                         if (curX < downX)
                         {
                             if (totalX == maxXx)
@@ -90,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        // scrolling to top of image (pic moving to the bottom)
+
                         if (curY > downY)
                         {
                             if (totalY == maxTop)
@@ -108,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        // scrolling to bottom of image (pic moving to the top)
+
                         if (curY < downY)
                         {
                             if (totalY == maxY)
@@ -150,4 +154,5 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
+
 }
