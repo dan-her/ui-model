@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         final int maxXx = ((gator.getWidth() / 2) - (screenW / 2));
         final int maxY = ((gator.getHeight() / 2) - (screenH / 2));
 
-        mouth.setLanguage(Locale.US);
+        //mouth.setLanguage(Locale.US);
         //mouth.speak("Text to say aloud", TextToSpeech.QUEUE_ADD, null);
         final int maxLeft = (maxXx * -1);
         final int maxTop = (maxY * -1);
