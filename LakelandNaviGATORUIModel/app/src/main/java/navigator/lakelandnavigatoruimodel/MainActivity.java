@@ -51,19 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        Bitmap gator = ((BitmapDrawable)getDrawable(R.drawable.alligator)).getBitmap();
-        Point size = new Point();
+        Bitmap map = ((BitmapDrawable)getDrawable(R.drawable.alligator)).getBitmap();
+        Point size = new Point(0,0);
         int screenW = size.x;
         int screenH = size.y;
-        final int maxXx = ((gator.getWidth() / 2) - (screenW / 2));
-        final int maxY = ((gator.getHeight() / 2) - (screenH / 2));
-
-        //mouth.setLanguage(Locale.US);
-        //mouth.speak("Text to say aloud", TextToSpeech.QUEUE_ADD, null);
+        final int maxXx = ((map.getWidth() / 2) - (screenW / 2));
+        final int maxY = ((map.getHeight() / 2) - (screenH / 2));
         final int maxLeft = (maxXx * -1);
         final int maxTop = (maxY * -1);
-        final ImageView gatre = this.findViewById(R.id.gatorView);
-        gatre.setOnTouchListener(new View.OnTouchListener() {
+        img.setOnTouchListener(new View.OnTouchListener() {
             float downX, downY;
             int totalX, totalY;
             int scrollByX, scrollByY;
@@ -152,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        gatre.scrollBy(scrollByX, scrollByY);
+                        img.scrollBy(scrollByX, scrollByY);
                         downX = curX;
                         downY = curY;
                         break;
